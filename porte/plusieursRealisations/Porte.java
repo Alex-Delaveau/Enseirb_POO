@@ -1,8 +1,8 @@
 
 public class Porte {
 
-  PorteCharniere porteCharniere;
-  PorteCoulissante porteCoulissante;
+  private PorteCharniere porteCharniere;
+  private PorteCoulissante porteCoulissante;
 
   private Porte(PorteCharniere porte){
     this.porteCharniere = porte;
@@ -21,6 +21,12 @@ public class Porte {
   }
 
   public boolean estFerme() {
+    if(porteCharniere != null){
+      return porteCharniere.estFerme();
+    }
+    if(porteCoulissante != null){
+      return porteCoulissante.estFerme();
+    }
     return false;
   }
 
