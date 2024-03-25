@@ -1,12 +1,13 @@
+import java.util.ArrayList;
 
 public class Telecommande {
 
   private final int maxPorte;
-  private final java.util.ArrayList<Porte> mesPortes;
+  private final ArrayList<Porte> mesPortes;
 
   public Telecommande(int maxPorte) {
     this.maxPorte = maxPorte;
-    mesPortes = new java.util.ArrayList<Porte>(this.maxPorte);
+    mesPortes = new ArrayList<Porte>(this.maxPorte);
   }
 
   public boolean estRempli() {
