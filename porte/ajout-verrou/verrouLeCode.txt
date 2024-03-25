@@ -1,0 +1,18 @@
+
+  private boolean estDeVerrouille = true;
+  
+  public void verrouiller() {
+    estDeVerrouille = false;
+  }
+  
+  public void deverrouiller() {
+    estDeVerrouille = true;
+  }
+  
+  public boolean estVerrouille() {
+    return !estDeVerrouille;
+  }
+
+/*
+En plus la méthode ouvrir() doit tenir compte de l'état du verrou.
+*/
