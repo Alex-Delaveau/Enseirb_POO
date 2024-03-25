@@ -13,8 +13,6 @@ public class PorteVerrouCoulissante {
     }
 
     public void fermer() {
-        if(estVerrouille())
-            return;
         porteCoulissante.fermer();
     }
 
@@ -40,5 +38,10 @@ public class PorteVerrouCoulissante {
 
     public boolean estVerrouille() {
         return !estDeVerrouille;
+    }
+
+
+    public void printPorteState(){
+        System.out.println("La porte est " + (estFerme() ? "fermée" : "ouverte") + " et " + (estVerrouille() ? "verrouillée" : "déverrouillée"));
     }
 }
