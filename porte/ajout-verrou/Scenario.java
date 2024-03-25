@@ -15,5 +15,10 @@ public class Scenario {
         porte.coulisser();
         porte.printPorteState();
         porte.verrouiller();
+
+        // Vérification de la possibilité de verrouiller après avoir coulissé
+        porte.printPorteState();
+        porte.verrouiller();
+        porte.printPorteState();
     }
 }
