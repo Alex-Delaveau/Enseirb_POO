@@ -1,4 +1,4 @@
-package autobus.heritage;
+package autobus.heritage.tec;
 
 
 public interface Passager {
@@ -17,7 +17,5 @@ public interface Passager {
   public void changerEnAssis();
  
   public void changerEnDebout();
- 
-  public void monterDans(Autobus t);
  
 }

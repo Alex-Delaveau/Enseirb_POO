@@ -1,4 +1,4 @@
-package autobus.heritage;
+package autobus.heritage.tec;
 
 import java.util.List;
 import java.util.ArrayList;
@@ -13,7 +13,7 @@ public class Autobus {
 
 
   // constructor
-  public Autobus(int nbPlaceAssise, int nbPlaceDebout) {
+  protected Autobus(int nbPlaceAssise, int nbPlaceDebout) {
     this.jaugeAssis = new Jauge(nbPlaceAssise, 0);
     this.jaugeDebout = new Jauge(nbPlaceDebout, 0);
     this.passagerStandards = new ArrayList<>(); 
@@ -21,21 +21,21 @@ public class Autobus {
   }
 
   //methods
-  public boolean aPlaceAssise() {
+  protected boolean aPlaceAssise() {
     return jaugeAssis.estVert();
   }
 
-  public boolean aPlaceDebout() {
+  protected boolean aPlaceDebout() {
     return jaugeDebout.estVert();
   }
 
-  public void monteeDemanderAssis(PassagerStandard p) {
+  protected void monteeDemanderAssis(PassagerStandard p) {
       jaugeAssis.incrementer();
       p.changerEnAssis();
       passagerStandards.add(p);
   }
 
-  public void monteeDemanderDebout(PassagerStandard p) {
+  protected void monteeDemanderDebout(PassagerStandard p) {
       jaugeDebout.incrementer();
       p.changerEnDebout();
       passagerStandards.add(p);
@@ -56,7 +56,7 @@ public class Autobus {
     }
   } 
 
-  public void arretDemanderAssis(PassagerStandard p) {
+  protected void arretDemanderAssis(PassagerStandard p) {
     if(!p.estDebout()){
       System.out.println("Le passager n'est pas debout");
       return;
@@ -70,7 +70,7 @@ public class Autobus {
     p.changerEnAssis();
   }
 
-  public void arretDemanderDebout(PassagerStandard p) {
+  protected void arretDemanderDebout(PassagerStandard p) {
     if(!p.estAssis()){
       System.out.println("Le passager n'est pas assis");
       return;
@@ -84,7 +84,7 @@ public class Autobus {
     p.changerEnDebout();
   }
 
-  public void arretDemanderSortie(PassagerStandard p) {
+  protected void arretDemanderSortie(PassagerStandard p) {
     if(p.estAssis()){
       jaugeAssis.decrementer();
     }else if(p.estDebout()){
@@ -96,7 +96,7 @@ public class Autobus {
   }
 
   @Override
-  public String toString() {
+  protected String toString() {
     return "[arret " + numeroArret + "] assis" + jaugeAssis.toString()
       + " debout" + jaugeDebout.toString();
   }
