@@ -29,13 +29,13 @@ public class Autobus {
     return jaugeDebout.estVert();
   }
 
-  protected void monteeDemanderAssis(PassagerStandard p) {
+  protected void monteeDemanderAssis(Passager p) {
       jaugeAssis.incrementer();
       p.changerEnAssis();
       passagerStandards.add(p);
   }
 
-  protected void monteeDemanderDebout(PassagerStandard p) {
+  protected void monteeDemanderDebout(Passager p) {
       jaugeDebout.incrementer();
       p.changerEnDebout();
       passagerStandards.add(p);
@@ -44,19 +44,19 @@ public class Autobus {
   public void allerArretSuivant() {
     this.numeroArret++;
 
-    Iterator<PassagerStandard> it = passagerStandards.iterator();
+    Iterator<Passager> it = passagerStandards.iterator();
 
     while (it.hasNext()) {
       it.next().nouvelArret(this, this.numeroArret);
     }
 
 
-    for (PassagerStandard p : passagerStandardsToDelete) {
+    for (Passager p : passagerStandardsToDelete) {
       passagerStandards.remove(p);
     }
   } 
 
-  protected void arretDemanderAssis(PassagerStandard p) {
+  protected void arretDemanderAssis(Passager p) {
     if(!p.estDebout()){
       System.out.println("Le passager n'est pas debout");
       return;
@@ -70,7 +70,7 @@ public class Autobus {
     p.changerEnAssis();
   }
 
-  protected void arretDemanderDebout(PassagerStandard p) {
+  protected void arretDemanderDebout(Passager p) {
     if(!p.estAssis()){
       System.out.println("Le passager n'est pas assis");
       return;
@@ -84,7 +84,7 @@ public class Autobus {
     p.changerEnDebout();
   }
 
-  protected void arretDemanderSortie(PassagerStandard p) {
+  protected void arretDemanderSortie(Passager p) {
     if(p.estAssis()){
       jaugeAssis.decrementer();
     }else if(p.estDebout()){
@@ -96,7 +96,7 @@ public class Autobus {
   }
 
   @Override
-  protected String toString() {
+  public String toString() {
     return "[arret " + numeroArret + "] assis" + jaugeAssis.toString()
       + " debout" + jaugeDebout.toString();
   }
