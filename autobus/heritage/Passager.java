@@ -20,6 +20,4 @@ public interface Passager {
  
   public void monterDans(Autobus t);
  
-  public void nouvelArret(Autobus t, int numeroArret);
-
 }
