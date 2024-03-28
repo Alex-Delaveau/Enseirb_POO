@@ -1,6 +1,6 @@
 package autobus.heritage.tec;
 
-public class PassagerStandard implements Passager {
+public class PassagerStandard implements Passager, Usager {
 
     private String nom;
     private int destination;
