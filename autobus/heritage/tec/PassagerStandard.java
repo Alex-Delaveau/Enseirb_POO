@@ -1,4 +1,4 @@
-package autobus.heritage;
+package autobus.heritage.tec;
 
 public class PassagerStandard implements Passager {
 
