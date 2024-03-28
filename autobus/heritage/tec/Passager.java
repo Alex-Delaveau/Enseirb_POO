@@ -1,7 +1,7 @@
 package autobus.heritage.tec;
 
 
-public interface Passager {
+interface Passager{
 
   //methods
   public String nom();
@@ -17,5 +17,8 @@ public interface Passager {
   public void changerEnAssis();
  
   public void changerEnDebout();
+
+  public void nouvelArret(Autobus v, int numeroArret);
+  
  
 }
