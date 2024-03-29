@@ -1,15 +1,16 @@
 package autobus.heritage.tec;
 
-interface DemandeArret {
+public interface Transport{
+    void allerArretSuivant();
+}
 
+interface DemandeArret {
     void arretDemanderAssis(Passager p);
     void arretDemanderDebout(Passager p);
     void arretDemanderSortie(Passager p);
     boolean aPlaceAssise();
-    boolean aPlaceDebout();
-    
+    boolean aPlaceDebout();   
 }
-
 
 interface DemandeMontee {
     void monteeDemanderAssis(Passager p);

@@ -3,11 +3,12 @@ package autobus.heritage;
 import autobus.heritage.tec.Autobus;
 import autobus.heritage.tec.Usager;
 import autobus.heritage.tec.PassagerFactory;
+import autobus.heritage.tec.Transport;
 
 class Simple {
 
     static public void main (String[] args) {
-      Autobus serenity = new Autobus(1, 2);
+      Transport serenity = new Autobus(1, 2);
   
       Usager kaylee = PassagerFactory.createPassagerStandard("Kaylee", 3);
       Usager jayne = PassagerFactory.createPassagerAnxieux("Jayne", 4);
