@@ -3,6 +3,7 @@ package autobus.heritage;
 import autobus.heritage.tec.PassagerAnxieux;
 import autobus.heritage.tec.PassagerStresse;
 import autobus.heritage.tec.Usager;
+import autobus.heritage.tec.Autobus;
 
 public class NouveauSimple {
     public static void main(String[] args) {
