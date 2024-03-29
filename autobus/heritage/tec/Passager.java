@@ -1,7 +1,7 @@
 package autobus.heritage.tec;
 
 
-interface Passager{
+public interface Passager {
 
   //methods
   public String nom();

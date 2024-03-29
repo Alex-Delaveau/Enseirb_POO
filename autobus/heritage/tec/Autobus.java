@@ -13,7 +13,7 @@ public class Autobus {
 
 
   // constructor
-  protected Autobus(int nbPlaceAssise, int nbPlaceDebout) {
+  public Autobus(int nbPlaceAssise, int nbPlaceDebout) {
     this.jaugeAssis = new Jauge(nbPlaceAssise, 0);
     this.jaugeDebout = new Jauge(nbPlaceDebout, 0);
     this.passagerStandards = new ArrayList<>(); 
