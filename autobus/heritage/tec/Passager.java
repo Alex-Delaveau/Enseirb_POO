@@ -18,5 +18,5 @@ public interface Passager {
  
   void changerEnDebout();
 
-  void nouvelArret(Autobus v, int numeroArret);
+  void nouvelArret(DemandeArret v, int numeroArret);
 }

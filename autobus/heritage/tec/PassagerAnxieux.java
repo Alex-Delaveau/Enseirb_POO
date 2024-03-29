@@ -63,7 +63,7 @@ class PassagerAnxieux implements Usager, Passager {
     }
 
     @Override
-    public void nouvelArret(Autobus t, int numeroArret) {
+    public void nouvelArret(DemandeArret t, int numeroArret) {
         if (this.destination == numeroArret - 1) {
             t.arretDemanderSortie(this);
         }
