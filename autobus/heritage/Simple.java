@@ -1,18 +1,17 @@
 package autobus.heritage;
 
 import autobus.heritage.tec.Autobus;
-import autobus.heritage.tec.Passager;
-import autobus.heritage.tec.PassagerStandard;
 import autobus.heritage.tec.Usager;
+import autobus.heritage.tec.PassagerFactory;
 
 class Simple {
 
     static public void main (String[] args) {
       Autobus serenity = new Autobus(1, 2);
   
-      Passager kaylee = new PassagerStandard("Kaylee", 3);
-      Usager jayne = new PassagerStandard("Jayne", 4);
-      Usager inara = new PassagerStandard("Inara", 5);
+      Usager kaylee = PassagerFactory.createPassagerStandard("Kaylee", 3);
+      Usager jayne = PassagerFactory.createPassagerAnxieux("Jayne", 4);
+      Usager inara = PassagerFactory.createPassagerStresse("Inara", 5);
   
       System.out.println(serenity);
   
