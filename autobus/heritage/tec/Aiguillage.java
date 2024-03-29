@@ -2,17 +2,17 @@ package autobus.heritage.tec;
 
 interface IAction {
     void executer();
-  }
-  
-  
+}
+
+
 
 class Aiguillage {
     private int nbAiguillage;
-  
+
     Aiguillage(int max) {
-      nbAiguillage = max - 1;
+        nbAiguillage = max - 1;
     }
-    
+
     void executer(IAction action) {
         if (estHorsLimite()) {
             System.out.println("limite depassee");
@@ -22,19 +22,19 @@ class Aiguillage {
         action.executer();
         nbAiguillage--;
     }
-  
+
     boolean estHorsLimite() {
-      return nbAiguillage < 0;
+        return nbAiguillage < 0;
     }
-  }
-  
-  class A implements IAction{
+}
+
+class A implements IAction {
     public void jeter() {
-      System.out.print("<Hop Hop>");
+        System.out.print("<Hop Hop>");
     }
-  
+
     public void rattrapper() {
-      System.out.println("<Poh Poh>");
+        System.out.println("<Poh Poh>");
     }
 
     @Override
@@ -43,29 +43,38 @@ class Aiguillage {
         rattrapper();
     }
 
-  }
-  
-  
-  class B implements IAction{
+}
+
+class B implements IAction {
     public void lancer() {
-      System.out.println("shazammm");
+        System.out.println("shazammm");
     }
 
     @Override
     public void executer() {
         lancer();
     }
-  }
-  
-  
-  class TestAiguillage {
-    static public void main(String[] args) {
-      Aiguillage g = new Aiguillage(3);
-  
-      g.executer(new B());
-      g.executer(new A());
-      g.executer(new B());
-      g.executer(new A());
+}
+
+class RetI implements IAction {
+    public void caster() {
+        System.out.println("Conversion de type");
     }
-  }
-  
+
+    @Override
+    public void executer() {
+        caster();
+    }
+}
+
+class TestAiguillage {
+    static public void main(String[] args) {
+        Aiguillage g = new Aiguillage(5);
+
+        g.executer(new B());
+        g.executer(new A());
+        g.executer(new B());
+        g.executer(new A());
+        g.executer(new RetI());
+    }
+}

@@ -9,3 +9,11 @@ interface DemandeArret {
     boolean aPlaceDebout();
     
 }
+
+
+interface DemandeMontee {
+    void monteeDemanderAssis(Passager p);
+    boolean aPlaceDebout();
+    boolean aPlaceAssise();
+    void monteeDemanderDebout(Passager p);
+}
