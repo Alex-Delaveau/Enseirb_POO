@@ -1,9 +1,6 @@
 package autobus.heritage.tec;
 
-public class PassagerStresse implements Usager, Passager{
-
-    
-
+class PassagerStresse implements Usager, Passager{
     
     private String nom;
     private int destination;

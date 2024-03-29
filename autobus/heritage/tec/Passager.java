@@ -4,21 +4,19 @@ package autobus.heritage.tec;
 public interface Passager {
 
   //methods
-  public String nom();
+  String nom();
  
-  public boolean estDehors();
+  boolean estDehors();
  
-  public boolean estAssis();
+  boolean estAssis();
  
-  public boolean estDebout();
+  boolean estDebout();
  
-  public void changerEnDehors();
+  void changerEnDehors();
  
-  public void changerEnAssis();
+  void changerEnAssis();
  
-  public void changerEnDebout();
+  void changerEnDebout();
 
-  public void nouvelArret(Autobus v, int numeroArret);
-  
- 
+  void nouvelArret(Autobus v, int numeroArret);
 }
