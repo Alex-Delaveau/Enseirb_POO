@@ -62,7 +62,7 @@ class PassagerStandard implements Passager, Usager {
     }
 
     @Override
-    public void nouvelArret(Autobus t, int numeroArret) {
+    public void nouvelArret(DemandeArret t, int numeroArret) {
         if (this.destination == numeroArret) {
             t.arretDemanderSortie(this);
         }

@@ -63,7 +63,7 @@ class PassagerStresse implements Usager, Passager{
     }
 
     @Override
-    public void nouvelArret(Autobus t, int numeroArret) {
+    public void nouvelArret(DemandeArret t, int numeroArret) {
         if (this.destination == numeroArret - 3 && t.aPlaceDebout()) {
             this.changerEnDebout();
         }

@@ -3,7 +3,7 @@ package autobus.heritage.tec;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Iterator;
-public class Autobus {
+public class Autobus implements DemandeArret{
 
   private Jauge jaugeAssis;
   private Jauge jaugeDebout;
@@ -21,11 +21,13 @@ public class Autobus {
   }
 
   //methods
-  protected boolean aPlaceAssise() {
+  @Override
+  public boolean aPlaceAssise() {
     return jaugeAssis.estVert();
   }
 
-  protected boolean aPlaceDebout() {
+  @Override
+  public boolean aPlaceDebout() {
     return jaugeDebout.estVert();
   }
 
@@ -56,7 +58,8 @@ public class Autobus {
     }
   } 
 
-  protected void arretDemanderAssis(Passager p) {
+  @Override
+  public void arretDemanderAssis(Passager p) {
     if(!p.estDebout()){
       System.out.println("Le passager n'est pas debout");
       return;
@@ -70,7 +73,8 @@ public class Autobus {
     p.changerEnAssis();
   }
 
-  protected void arretDemanderDebout(Passager p) {
+  @Override
+  public void arretDemanderDebout(Passager p) {
     if(!p.estAssis()){
       System.out.println("Le passager n'est pas assis");
       return;
@@ -84,7 +88,8 @@ public class Autobus {
     p.changerEnDebout();
   }
 
-  protected void arretDemanderSortie(Passager p) {
+  @Override
+  public void arretDemanderSortie(Passager p) {
     if(p.estAssis()){
       jaugeAssis.decrementer();
     }else if(p.estDebout()){
