@@ -2,7 +2,7 @@ package autobus.heritage.tec;
 
 public interface Usager {
 
-  public void monterDans(Autobus t);
+  public void monterDans(DemandeMontee t);
   
   public String nom();
 }

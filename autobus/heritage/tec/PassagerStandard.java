@@ -48,7 +48,7 @@ class PassagerStandard implements Passager, Usager {
     }
 
     @Override
-    public void monterDans(Autobus t) {
+    public void monterDans(DemandeMontee t) {
         if (!this.estDehors()) {
             System.out.println("Deja dans un bus");
             return;
