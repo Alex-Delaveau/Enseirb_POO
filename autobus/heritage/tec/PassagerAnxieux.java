@@ -48,11 +48,13 @@ class PassagerAnxieux implements Usager, Passager {
     }
 
     @Override
-    public void monterDans(Autobus t) {
+    public void monterDans(Transport p) {
         if (!this.estDehors()) {
             System.out.println("Deja dans un bus");
             return;
         }
+
+        DemandeMontee t = (DemandeMontee) p;
 
         if (t.aPlaceDebout()) {
             t.monteeDemanderDebout(this);

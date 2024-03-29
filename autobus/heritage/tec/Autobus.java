@@ -3,7 +3,7 @@ package autobus.heritage.tec;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Iterator;
-public class Autobus implements DemandeArret, DemandeMontee{
+public class Autobus implements DemandeArret, DemandeMontee, Transport{
 
   private Jauge jaugeAssis;
   private Jauge jaugeDebout;
