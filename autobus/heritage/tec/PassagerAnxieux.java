@@ -76,4 +76,8 @@ class PassagerAnxieux implements Usager, Passager {
         return nom + ' ' + position;
     }
 
+
+    public static void test(){
+        System.out.println("Test de la classe PassagerAnxieux");
+    }
 }
