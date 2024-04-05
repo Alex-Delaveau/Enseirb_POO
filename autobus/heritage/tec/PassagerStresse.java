@@ -6,6 +6,7 @@ class PassagerStresse extends PassagerStandard{
 
     public PassagerStresse(String nom, int destination) {
         super(nom, destination);
+        this.destination = destination;
     }
 
 
