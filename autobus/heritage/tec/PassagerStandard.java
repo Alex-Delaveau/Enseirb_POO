@@ -24,14 +24,11 @@ class PassagerStandard extends FactoPassager {
             t.monteeDemanderDebout(this);
         }
     }
-
+    
     @Override
-    public void nouvelArret(DemandeArret t, int numeroArret) {
-        if (this.getDestination() == numeroArret) {
-            t.arretDemanderSortie(this);
-        }
+    protected void choixNouvelArret(DemandeArret bus, int distanceDestination) {
+        this.sortir(bus, distanceDestination);
     }
-
     
 
 }

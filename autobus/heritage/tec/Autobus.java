@@ -95,7 +95,6 @@ public class Autobus implements DemandeArret, DemandeMontee, Transport{
     }else if(p.estDebout()){
       jaugeDebout.decrementer();
     }
-    // passagerStandards.remove(p);
     passagerStandardsToDelete.add(p);
     p.changerEnDehors();
   }

@@ -1,52 +1,10 @@
 package autobus.heritage.tec;
 
-class PassagerAnxieux implements Usager, Passager {
-    
-    private String nom;
-    private int destination;
-    private Position position;
+class PassagerAnxieux extends FactoPassager{
 
     public PassagerAnxieux(String nom, int destination) {
-        this.nom = nom;
-        this.destination = destination;
-        this.position = Position.creer();
+        super(nom, destination);
     }
-
-    @Override
-    public String nom() {
-        return this.nom;
-    }
-
-    @Override
-    public boolean estDehors() {
-        return this.position.estDehors();
-    }
-
-    @Override
-    public boolean estAssis() {
-        return this.position.estAssis();
-    }
-
-    @Override
-    public boolean estDebout() {
-        return this.position.estDebout();
-    }
-
-    @Override
-    public void changerEnDehors() {
-        this.position = Position.creer();
-    }
-
-    @Override
-    public void changerEnAssis() {
-        this.position = Position.assis();
-    }
-
-    @Override
-    public void changerEnDebout() {
-        this.position = Position.debout();
-    }
-
     @Override
     public void monterDans(Transport p) {
         if (!this.estDehors()) {
@@ -64,20 +22,20 @@ class PassagerAnxieux implements Usager, Passager {
         }
     }
 
+    // @Override
+    // public void nouvelArret(DemandeArret t, int numeroArret) {
+    //     if (this.getDestination() == numeroArret - 1) {
+    //         super.sortir(t, numeroArret);
+    //     }
+    // }
+
     @Override
-    public void nouvelArret(DemandeArret t, int numeroArret) {
-        if (this.destination == numeroArret - 1) {
-            t.arretDemanderSortie(this);
+    protected void choixNouvelArret(DemandeArret bus, int distanceDestination) {
+        if (super.sortir(bus, distanceDestination)) {
+            return;
         }
-    }
-
-    @Override
-    public String toString() {
-        return nom + ' ' + position;
-    }
-
-
-    public static void test(){
-        System.out.println("Test de la classe PassagerAnxieux");
+        if (distanceDestination == 1) {
+            this.changerEnDebout();
+        }
     }
 }
