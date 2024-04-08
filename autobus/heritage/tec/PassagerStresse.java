@@ -1,6 +1,6 @@
 package autobus.heritage.tec;
 
-class PassagerStresse extends PassagerStandard{
+class PassagerStresse extends FactoPassager{
     
     private int destination;
 
@@ -27,14 +27,21 @@ class PassagerStresse extends PassagerStandard{
         }
     }
 
-    @Override
-    public void nouvelArret(DemandeArret t, int numeroArret) {
-        if (this.destination == numeroArret - 3 && t.aPlaceDebout()) {
-            this.changerEnDebout();
-        }
+    // @Override
+    // public void nouvelArret(DemandeArret t, int numeroArret) {
+    //     if (this.destination == numeroArret - 3 && t.aPlaceDebout()) {
+    //         this.changerEnDebout();
+    //     }
+    //     super.sortir(t, numeroArret);
+    // }
 
-        if (this.destination == numeroArret) {
-            t.arretDemanderSortie(this);
+    @Override
+    protected void choixNouvelArret(DemandeArret bus, int distanceDestination) {
+        if (super.sortir(bus, distanceDestination)) {
+            return;
+        }
+        if (distanceDestination == 3 && bus.aPlaceDebout()) {
+            this.changerEnDebout();
         }
     }
     

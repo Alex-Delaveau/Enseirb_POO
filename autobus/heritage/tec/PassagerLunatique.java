@@ -1,6 +1,6 @@
 package autobus.heritage.tec;
 
-public class PassagerLunatique extends PassagerStandard {
+public class PassagerLunatique extends FactoPassager {
 
 
     public PassagerLunatique(String nom, int destination) {
@@ -8,13 +8,37 @@ public class PassagerLunatique extends PassagerStandard {
     }
     
 
+    // @Override
+    // public void nouvelArret(DemandeArret t, int numeroArret) {
+    //     if (this.estAssis()) {
+    //         this.changerEnDebout();
+    //     } else {
+    //         this.changerEnAssis();
+    //     }
+    //     super.sortir(t, numeroArret);
+    // }
+
+
+
     @Override
-    public void nouvelArret(DemandeArret t, int numeroArret) {
+    public void monterDans(Transport t) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'monterDans'");
+    }
+
+
+    @Override
+    protected void choixNouvelArret(DemandeArret bus, int distanceDestination) {
+        if (super.sortir(bus, distanceDestination)) {
+            return;
+        }
+
         if (this.estAssis()) {
             this.changerEnDebout();
         } else {
             this.changerEnAssis();
         }
-        super.nouvelArret(t, numeroArret);
     }
+
+
 }

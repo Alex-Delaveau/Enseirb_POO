@@ -39,38 +39,58 @@ abstract class FactoPassager implements Passager, Usager {
     public void changerEnDebout() {
         this.position = Position.debout();
     }
-    final protected void debout(DemandeMontee b){
-        if(b.aPlaceDebout()){
-            b.monteeDemanderDebout(this);        
-        }
 
-    }
-    final protected void assis(DemandeMontee b){
-        if(b.aPlaceAssise()){
-            b.monteeDemanderAssis(this);
-        }
-    }
-    final protected void deboutAssis(Autobus b){
-        if(b.aPlaceDebout()){
-            b.monteeDemanderAssis(this);
-        }
-        else if(b.aPlaceAssise()){
+    final protected void debout(DemandeMontee b) {
+        if (b.aPlaceDebout()) {
             b.monteeDemanderDebout(this);
         }
 
     }
-    final protected void Assisdebout(Autobus b){
-        if(b.aPlaceAssise()){
+
+    final protected void assis(DemandeMontee b) {
+        if (b.aPlaceAssise()) {
             b.monteeDemanderAssis(this);
         }
-        else if(b.aPlaceDebout()){
+    }
+
+    final protected void deboutAssis(Autobus b) {
+        if (b.aPlaceDebout()) {
+            b.monteeDemanderAssis(this);
+        } else if (b.aPlaceAssise()) {
+            b.monteeDemanderDebout(this);
+        }
+
+    }
+
+    final protected void Assisdebout(Autobus b) {
+        if (b.aPlaceAssise()) {
+            b.monteeDemanderAssis(this);
+        } else if (b.aPlaceDebout()) {
             b.monteeDemanderDebout(this);
         }
     }
+
+
 
     public int getDestination() {
         return destination;
     }
+    
+
+    @Override
+    final public void nouvelArret(DemandeArret v, int numeroArret) {
+        this.choixNouvelArret(v, numeroArret - this.getDestination());
+    }
+
+    final boolean sortir(DemandeArret b, int numeroArret) {
+        if (this.destination == numeroArret) {
+            b.arretDemanderSortie(this);
+            return true;
+        }
+        return false;
+    }
+
+    abstract protected void choixNouvelArret(DemandeArret v, int distanceDestination);
 
     @Override
     public String toString() {
