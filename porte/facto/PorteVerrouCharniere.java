@@ -1,6 +1,3 @@
-package porte.facto;
-
-
 class PorteVerrouCharniere extends PorteCharniere {
   
   private boolean estDeVerrouille;

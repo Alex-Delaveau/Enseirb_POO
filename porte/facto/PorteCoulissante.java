@@ -1,6 +1,3 @@
-package porte.facto;
-
-
 class PorteCoulissante {
   private final int MAX;
   private int pas;

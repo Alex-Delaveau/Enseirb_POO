@@ -1,6 +1,3 @@
-package porte.facto;
-
-
 class PorteVerrouCoulissante extends PorteCoulissante {
 
   private boolean estDeVerrouille; //Default value false.
