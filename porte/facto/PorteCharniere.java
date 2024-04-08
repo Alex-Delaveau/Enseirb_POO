@@ -1,3 +1,4 @@
+package porte.facto;
 
 public class PorteCharniere {
   private boolean estFerme;

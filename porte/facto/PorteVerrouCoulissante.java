@@ -1,3 +1,5 @@
+package porte.facto;
+
 
 class PorteVerrouCoulissante extends PorteCoulissante {
 
