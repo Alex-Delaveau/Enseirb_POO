@@ -7,8 +7,10 @@ public class ArretSportif implements Arret{
 
     @Override
     public void choixNouvelArret(DemandeArret v, int numeroArret, FactoPassager fp) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'choixNouvelArret'");
+        //demande à sortir un arrêt avant sa destination.
+        if (fp.getDestination() - numeroArret <= 1) {
+            fp.sortir(v, numeroArret);
+        }
     }
 
 }

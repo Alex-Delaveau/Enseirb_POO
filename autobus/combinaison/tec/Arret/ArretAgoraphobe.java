@@ -7,8 +7,11 @@ public class ArretAgoraphobe implements Arret {
 
     @Override
     public void choixNouvelArret(DemandeArret v, int numeroArret, FactoPassager fp) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'choixNouvelArret'");
+        //demande à sortir si le bus n’a plus de place assise ou de place debout ;
+        if (!v.aPlaceAssise() && !v.aPlaceDebout()) {
+            v.arretDemanderSortie(fp);
+        }
+        fp.sortir(v, numeroArret);
     }
 
 }

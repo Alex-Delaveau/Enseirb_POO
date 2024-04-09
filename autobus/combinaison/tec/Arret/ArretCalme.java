@@ -7,8 +7,8 @@ public class ArretCalme implements Arret{
 
     @Override
     public void choixNouvelArret(DemandeArret v, int numeroArret, FactoPassager fp) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'choixNouvelArret'");
+        //ne pas changer de place ;
+        fp.sortir(v, numeroArret);
     }
     
 }

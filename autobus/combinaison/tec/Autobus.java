@@ -2,7 +2,7 @@ package autobus.combinaison.tec;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Iterator;
-public class Autobus implements DemandeArret, DemandeMontee, Transport{
+public class Autobus implements DemandeArret, DemandeMonter, Transport{
 
   private Jauge jaugeAssis;
   private Jauge jaugeDebout;
@@ -59,10 +59,6 @@ public class Autobus implements DemandeArret, DemandeMontee, Transport{
 
   @Override
   public void arretDemanderAssis(Passager p) {
-    if(!p.estDebout()){
-      System.out.println("Le passager n'est pas debout");
-      return;
-    }
     if(!aPlaceAssise()){
       System.out.println("Il n'y a plus de place assise");
       return;
@@ -74,10 +70,6 @@ public class Autobus implements DemandeArret, DemandeMontee, Transport{
 
   @Override
   public void arretDemanderDebout(Passager p) {
-    if(!p.estAssis()){
-      System.out.println("Le passager n'est pas assis");
-      return;
-    }
     if(!aPlaceDebout()){
       System.out.println("Il n'y a plus de place debout");
       return;

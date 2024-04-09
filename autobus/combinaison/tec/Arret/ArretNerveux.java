@@ -7,8 +7,14 @@ public class ArretNerveux implements Arret{
 
     @Override
     public void choixNouvelArret(DemandeArret v, int numeroArret, FactoPassager fp) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'choixNouvelArret'");
+        //changer de place à chaque arrêté ;
+        if(fp.estAssis()){
+            v.arretDemanderDebout(fp);
+        } else if (fp.estDebout()){
+            v.arretDemanderAssis(fp);
+        }
+
+        fp.sortir(v, numeroArret);
     }
     
 }

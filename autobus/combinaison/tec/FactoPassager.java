@@ -81,7 +81,7 @@ public abstract class FactoPassager implements Passager, Usager{
         }
     }
 
-    final boolean sortir(DemandeArret b, int numeroArret) {
+    final public boolean sortir(DemandeArret b, int numeroArret) {
         if (this.destination == numeroArret) {
             b.arretDemanderSortie(this);
             return true;

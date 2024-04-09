@@ -7,8 +7,12 @@ public class ArretPrudent implements Arret{
 
     @Override
     public void choixNouvelArret(DemandeArret v, int numeroArret, FactoPassager fp) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'nouvelArret'");
+        //à partir de trois arrêt de sa destination, demande une place debout ;
+        if(fp.getDestination() - numeroArret <= 3){
+            v.arretDemanderDebout(fp);
+        }
+
+        fp.sortir(v, numeroArret);
     }
     
 }

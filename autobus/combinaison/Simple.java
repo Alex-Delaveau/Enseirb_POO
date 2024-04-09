@@ -17,10 +17,12 @@ public class Simple {
         // Stresse
         Usager inara = PassagerFactory.createPassagerStresse("Inara", 5);
 
+
         System.out.println(serenity);
 
         serenity.allerArretSuivant();
         // 1
+        inara.monterDans(serenity);
         kaylee.monterDans(serenity);
 
         System.out.println(serenity);
