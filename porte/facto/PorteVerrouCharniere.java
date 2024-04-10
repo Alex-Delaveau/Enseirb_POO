@@ -1,4 +1,3 @@
-
 class PorteVerrouCharniere extends PorteCharniere {
   
   private boolean estDeVerrouille;
